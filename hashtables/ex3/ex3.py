@@ -3,8 +3,29 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    # set hash table and set results array
+    hash_table = {}
+    results = []
+    
+    # nested for loop to go through the list of arrays
+    for array in arrays:
+        for i in array:
+            key = i
+            # if key not in hashtable then add
+            
+            if key not in hash_table:
+                hash_table[key] = 1
+            else:
+                # if key in hashtable - add one
+                hash_table[key] += 1
+                
+    # iterate over the hash table after it has been populated
+    for i in hash_table:
+        if hash_table[i] > 1:
+            # if hash table has more than one item in it, append it to the results table
+            results.append(i)
 
-    return result
+    return results
 
 
 if __name__ == "__main__":
